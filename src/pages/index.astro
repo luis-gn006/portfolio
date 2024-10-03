@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Overlay from '../layouts/Overlay.astro';
+import Header from '../components/Header.astro';
+import AboutMe from '../components/AboutMe.astro';
+---
+
+<Layout title="Luis González Portfolio">
+	<Overlay>
+		<main>
+			<Header></Header>
+			<AboutMe></AboutMe>
+		</main>
+	</Overlay>
+</Layout>
+
+<style>
+	main {
+		padding: 0;
+		margin: 0;
+		color: white;
+		font-size: 18px;
+		line-height: 1.6;
+		position: relative;
+	}
+</style>

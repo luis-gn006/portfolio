@@ -1,0 +1,107 @@
+---
+
+---
+<script>
+    const navButton = document.querySelector('.header__nav');
+    function togglePopup() {
+        document.querySelector('.nav__popup')?.classList.toggle('nav__popup-visible');
+    };
+    navButton?.addEventListener("click", function() {
+        togglePopup();
+    })
+</script>
+
+<header class="header">
+    <div class="header__circle"><p class="header__initial">L</p></div>
+    <h1 class="header__title">Luis González</h1>  
+    <button class="header__nav">
+        <span class="line-1"></span>
+        <span class="line-2"></span>
+        <span class="line-3"></span>
+    </button>
+</header>
+
+<div class="nav__popup">
+    <a class="nav__link nav__link1">Inicio</a>
+    <a class="nav__link nav__link2">Proyectos</a>
+    <a class="nav__link nav__link3">Habilidades</a>
+    <a class="nav__link nav__link4">Sobre mi</a>
+    <a class="nav__link nav__link5">Contacto</a>
+</div>
+
+
+<style>
+    .header {
+        z-index: 2;
+        margin: 0 ;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        background-color: var(--fourth-color);
+    }
+    .header__circle {
+        background-color: var(--first-color);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px 0 0;
+    }
+    .header__initial {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .header__title {
+        color: white;
+        font-size: 18px;
+    }
+    .header__nav {
+        width: 21px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        box-sizing: content-box;
+    }
+    .header__nav:hover {
+        border: 1px solid var(--first-color);
+    }
+    span {
+        width: 4px;
+        height: 4px;
+        background-color: var(--fourth-color);
+        display: block;
+        border-radius: 50%;
+    }
+    .nav__popup {
+        display: none;
+        width: 100px;
+        height: 100px;
+        background-color: var(--fourth-color);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .nav__popup-visible {
+        padding: 60px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        gap: 20px;
+    }
+    .nav__link {
+        font-weight: 500;
+        cursor: pointer;
+    }
+</style>
