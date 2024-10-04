@@ -1,0 +1,33 @@
+<section class="proyects">
+    <h3 class="proyects__title">Proyectos</h3>
+    <p class="proyects__text">Si lo puedes imaginar , lo puedes programar.</p>
+    <div class="proyects__container">
+        <slot />
+    </div>
+</section>
+
+<style>
+    .proyects{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        margin: 0 20px 0 20px;
+        gap: 20px;
+    }
+    .proyects__title{
+        font-size: 16px;
+        margin: 0;
+        color: azure;
+        font-weight: 300;
+    }
+    .proyects__text {
+        font-size: 12px;
+        margin: 0;
+    }
+    .proyects__container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+</style>

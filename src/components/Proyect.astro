@@ -1,0 +1,74 @@
+---
+interface Props {
+	title: string;
+	text: string;
+	image: string;
+    link: string;
+}
+
+const { title, text , image, link } = Astro.props;
+---
+
+<div class="proyect">
+    <div class="proyect__description">
+        <h4 class="proyect__title">{title}</h4>
+        <p class="proyect__text">{text}</p>
+        <p class="proyect__tools">
+            <slot />
+        </p>
+        <a class="proyect__link" href={link} target="_blank">Link</a>
+    </div>
+    <img class="proyect__image" src={image} alt={`imagen de ${title}`}>
+</div>
+
+<style>
+    .proyect {
+        width: 243px;
+        height: 243px;
+        position: relative;
+        display: inline-block;
+    }
+    .proyect__image {
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease;
+        border-radius: 20px;
+    }
+    .proyect__image:hover {
+        opacity: 0.07; 
+    }
+    .proyect__description {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2; 
+        opacity: 0; 
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        transition: opacity 0.3s ease; 
+        border-radius: 20px;
+    }
+    .proyect__text {
+        text-align: center;
+        font-size: 14px;
+        margin: 0 5px 8px 5px;
+    }
+    .proyect:hover .proyect__description {
+        opacity: 1;
+    }
+    .proyect__link {
+        color: white;
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .proyect__link:hover {
+        color: var(--first-color);
+    }
+</style>
