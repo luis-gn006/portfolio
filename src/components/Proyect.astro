@@ -4,9 +4,10 @@ interface Props {
 	text: string;
 	image: string;
     link: string;
+    repo: string;
 }
 
-const { title, text , image, link } = Astro.props;
+const { title, text , image, link, repo } = Astro.props;
 ---
 
 <div class="proyect">
@@ -16,23 +17,31 @@ const { title, text , image, link } = Astro.props;
         <p class="proyect__tools">
             <slot />
         </p>
-        <a class="proyect__link" href={link} target="_blank">Link</a>
+        <a class="proyect__link" href={link} target="_blank">Página</a>
+        <a class="proyect__link" href={repo} target="_blank">Repositorio</a>
     </div>
     <img class="proyect__image" src={image} alt={`imagen de ${title}`}>
 </div>
 
 <style>
     .proyect {
-        width: 243px;
-        height: 243px;
+        width: 280px;
+        height: 280px;
         position: relative;
         display: inline-block;
+    }
+    .proyect__title {
+        margin: 0 5px 0 5px;
+        padding: 8px 0 5px 0;
+        font-weight: 600;
+        text-align: center;
     }
     .proyect__image {
         width: 100%;
         height: 100%;
         transition: opacity 0.3s ease;
         border-radius: 20px;
+        object-fit: cover;
     }
     .proyect__image:hover {
         opacity: 0.07; 
@@ -49,7 +58,7 @@ const { title, text , image, link } = Astro.props;
         left: 0;
         z-index: 2; 
         opacity: 0; 
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.8);
         color: white;
         transition: opacity 0.3s ease; 
         border-radius: 20px;
@@ -57,7 +66,8 @@ const { title, text , image, link } = Astro.props;
     .proyect__text {
         text-align: center;
         font-size: 14px;
-        margin: 0 5px 8px 5px;
+        margin: 0 5px 0 5px;
+        padding: 0 0 5px 0;
     }
     .proyect:hover .proyect__description {
         opacity: 1;
