@@ -20,7 +20,7 @@
             <div class="contact__line"></div>
             <span class="contact__input-error email-error"></span>
             <label class='contact__label-message' for='message'>Mensaje</label>
-            <input type='text'
+            <textarea 
                 class="contact__form-input contact__form-message"
                 id="message"
                 name="message"
@@ -43,7 +43,7 @@
 
 <style>
     .contact {
-        padding: 20px 0 80px 0;
+        padding: 20px 0 40px 0;
         margin: 0 20px;
         display: flex;
         flex-direction: column;
@@ -64,8 +64,9 @@
     .contact__form-input {
         width: 97%;
     }
-    .contact__form-input:focus {
-        border: 1px solid var(--first-color);
+    .contact__form-message {
+        height: 100px;
+        resize: none;
     }
     .contact__line {
         margin: 5px 0;
