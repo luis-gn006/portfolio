@@ -1,16 +1,14 @@
-<section class="about-me">
-    <div class="about-me__circle">
-        <img class="about-me__image" src="../../public/me.jpg" alt="profile image">
+<section class='about-me' id='aboutMe'>
+    <div class='about-me__circle'>
+        <img class='about-me__image' src='./me.jpg' alt='profile image'>
     </div>
-    <div class="about-me__description">
-        <h2 class="about-me__title">Desarrollador Web</h2>
-        <h3 class="about-me__subtitle">Luis González</h3>
-        <p class="about-me__text">Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, 
-            risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis
-            purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.</p>
-        <div class="about-me__links">
-            <a class="about-me__github" target="_blank" href="https://github.com/luis-gn006"></a>
-            <a class="about-me__linkedin" target="_blank" href="https://www.linkedin.com/in/luis-enrique-g-7645a5297/"></a>
+    <div class='about-me__description'>
+        <h2 class='about-me__title'>Desarrollador Web</h2>
+        <h3 class='about-me__subtitle'>Luis González</h3>
+        <p class='about-me__text'>Hola! Soy Luis, apasionado en todo lo que hago y ahora en el mundo tech, estudiante del bootcamp TripleTen.</p>
+        <div class='about-me__links'>
+            <a class='about-me__github' target='_blank' href='https://github.com/luis-gn006'></a>
+            <a class='about-me__linkedin' target='_blank' href='https://www.linkedin.com/in/luis-enrique-g-7645a5297/'></a>
         </div>
     </div>
 </section>
@@ -20,23 +18,23 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 70px 0 40px 0;
-        margin: 0 20px ;
+        padding: 80px 0 40px 0;
+        margin: 0 20px;
         gap: 20px;
     }
     .about-me__circle {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
         background-color: var(--second-color);;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 -2px 10px grey;
+        box-shadow: 0 -2px 10px #fff;
     }
     .about-me__image {
-        width: 90px;
-        height: 90px;
+        width: 130px;
+        height: 130px;
         border-radius: 50%;
     }
     .about-me__description {
@@ -63,18 +61,27 @@
         margin: 0 30px;
     }
     .about-me__github {
-        background: url('../../public/github-mark-white.svg') no-repeat;
+        background: url('./github-mark-white.svg') no-repeat;
         background-size: 20px ;
         width: 20px;
         height: 20px;
         box-sizing: content-box;
     }
     .about-me__linkedin {
-        background: url('../../public/LI-In-Bug.png') no-repeat;
+        background: url('./LI-In-Bug.png') no-repeat;
         background-size: 20px ;
         width: 20px;
         height: 20px;
         margin: 3px 0 0 0;
         box-sizing: content-box;
+    }
+
+    @media screen and (min-width: 640px) {
+        .about-me {
+            flex-direction: row;
+            margin: 0 auto;
+            gap: 60px;
+            max-width: 580px;
+        }
     }
 </style>

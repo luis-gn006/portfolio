@@ -1,39 +1,39 @@
 <script>
-    import {FormValidator, formConfig} from "./FormValidator"
+    import {FormValidator, formConfig} from './FormValidator'
 
     const contactForm = document.querySelector('.contact__form');
     const contactFormValidation = new FormValidator(formConfig, contactForm);
     contactFormValidation.enableValidation();
 </script>
 
-<section class='contact'>
+<section class='contact' id='contact'>
     <h4 class='contact__title'>Creemos algo juntos</h4>
     <form class='contact__form' novalidate>
         <fieldset class='contact__form-set'>
             <label class='contact__form-label' for='email'>E-mail</label>
             <input type='email'
-                class="contact__form-input contact__form-email"
-                id="email"
-                name="email"
-                placeholder="correo@correo.com"
+                class='contact__form-input contact__form-email'
+                id='email'
+                name='email'
+                placeholder='correo@correo.com'
                 required />
-            <div class="contact__line"></div>
-            <span class="contact__input-error email-error"></span>
+            <div class='contact__line'></div>
+            <span class='contact__input-error email-error'></span>
             <label class='contact__label-message' for='message'>Mensaje</label>
             <textarea 
-                class="contact__form-input contact__form-message"
-                id="message"
-                name="message"
-                placeholder="Trabajemos juntos"
-                minlength="5"
+                class='contact__form-input contact__form-message'
+                id='message'
+                name='message'
+                placeholder='Trabajemos juntos'
+                minlength='5'
                 required />
-            <div class="contact__line"></div>
-            <span class="contact__input-error message-error"></span>
+            <div class='contact__line'></div>
+            <span class='contact__input-error message-error'></span>
             <button
                 disabled
-                type="submit"
-                class="contact__form-button contact__form-button_active contact__create-button contact__form-button_disabled"
-                value="send"
+                type='submit'
+                class='contact__form-button contact__form-button_active contact__create-button contact__form-button_disabled'
+                value='send'
                 >
                 Enviar
             </button>
@@ -105,5 +105,15 @@
     }
     ::placeholder {
         font-size: 12px;
+    }
+
+    @media screen and (min-width: 640px) {
+        .contact{
+            max-width: 580px;
+            margin: 0 auto;
+        }
+        .contact__form-input {
+            width: 99%;
+        }
     }
 </style>

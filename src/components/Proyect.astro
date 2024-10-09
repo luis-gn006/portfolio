@@ -10,17 +10,17 @@ interface Props {
 const { title, text , image, link, repo } = Astro.props;
 ---
 
-<div class="proyect">
-    <div class="proyect__description">
-        <h4 class="proyect__title">{title}</h4>
-        <p class="proyect__text">{text}</p>
-        <p class="proyect__tools">
+<div class='proyect'>
+    <div class='proyect__description'>
+        <h4 class='proyect__title'>{title}</h4>
+        <p class='proyect__text'>{text}</p>
+        <p class='proyect__tools'>
             <slot />
         </p>
-        <a class="proyect__link" href={link} target="_blank">Página</a>
-        <a class="proyect__link" href={repo} target="_blank">Repositorio</a>
+        <a class='proyect__link' href={link} target='_blank'>Página</a>
+        <a class='proyect__link' href={repo} target='_blank'>Repositorio</a>
     </div>
-    <img class="proyect__image" src={image} alt={`imagen de ${title}`}>
+    <img class='proyect__image' src={image} alt={`imagen de ${title}`}>
 </div>
 
 <style>

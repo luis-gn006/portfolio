@@ -17,7 +17,7 @@ export default class FormValidator {
       this.formConfig.inputErrorClass
     );
     errorElement.classList.remove(this.formConfig.errorClass);
-    errorElement.textContent = "";
+    errorElement.textContent = '';
   }
   _checkInputValidity(formElement, inputElement) {
     if (!inputElement.validity.valid) {
@@ -55,14 +55,14 @@ export default class FormValidator {
     );
     this._toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", () => {
+      inputElement.addEventListener('input', () => {
         this._checkInputValidity(formElement, inputElement);
         this._toggleButtonState(inputList, buttonElement);
       });
     });
   }
   enableValidation() {
-    this.formSelector.addEventListener("submit", function (evt) {
+    this.formSelector.addEventListener('submit', function (evt) {
       evt.preventDefault();
     });
     const fieldsetList = Array.from(
@@ -74,35 +74,35 @@ export default class FormValidator {
   }
   resetValidation() {
     const inputList = Array.from(
-      this.formSelector.querySelectorAll(".contact__form-input")
+      this.formSelector.querySelectorAll('.contact__form-input')
     );
     inputList.forEach((inputElement) => {
       inputElement.nextElementSibling.classList.remove(
-        "contact__form-input_error"
+        'contact__form-input_error'
       );
       const errorElement = this.formSelector.querySelector(
         `.${inputElement.id}-error`
       );
-      errorElement.classList.remove("contact__input-error_active");
-      errorElement.textContent = "";
+      errorElement.classList.remove('contact__input-error_active');
+      errorElement.textContent = '';
     });
     const buttonElement = this.formSelector.querySelector(
-      ".contact__form-button"
+      '.contact__form-button'
     );
     buttonElement.disabled = true;
-    buttonElement.classList.add("contact__form-button_disabled");
-    buttonElement.classList.remove("contact__form-button_active");
+    buttonElement.classList.add('contact__form-button_disabled');
+    buttonElement.classList.remove('contact__form-button_active');
   }
 }
 
 const formConfig = {
-  inputSelector: ".contact__form-input",
-  submitButtonSelector: ".contact__form-button",
-  inactiveButtonClass: "contact__form-button_disabled",
-  activeButtonClass: "contact__form-button_active",
-  inputErrorClass: "contact__form-input_error",
-  errorClass: "contact__input-error_active",
-  fieldsetSelector: ".contact__form-set",
+  inputSelector: '.contact__form-input',
+  submitButtonSelector: '.contact__form-button',
+  inactiveButtonClass: 'contact__form-button_disabled',
+  activeButtonClass: 'contact__form-button_active',
+  inputErrorClass: 'contact__form-input_error',
+  errorClass: 'contact__input-error_active',
+  fieldsetSelector: '.contact__form-set',
 };
 
 export {FormValidator, formConfig}
