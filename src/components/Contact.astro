@@ -4,6 +4,36 @@
     const contactForm = document.querySelector('.contact__form');
     const contactFormValidation = new FormValidator(formConfig, contactForm);
     contactFormValidation.enableValidation();
+
+    import { Resend } from 'resend';
+
+    const resend = new Resend('re_TBP3362a_LHtm42LPVUTFkpeMtEnbFL1d');
+    const contact = document.querySelector<HTMLFormElement>('.contact__form');
+    const inputEmail = document.querySelector<HTMLInputElement>('.contact__form-email');
+    const inputMessage = document.querySelector<HTMLTextAreaElement>('.contact__form-message');
+    
+    contact?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let data = [
+            {
+                email: inputEmail?.value,
+                message: inputMessage?.value,
+            },
+        ];
+        try {
+            const emailSend = resend.emails.send({
+                from: `${data[0].email}`,
+                to: ['luis.hellraiser06@gmail.com'],
+                subject: 'Trabajemos juntos',
+                html: `<p>${data[0].message}</p>`,
+            });
+            contact.reset();
+        } catch (error) {
+            return console.error
+        } finally {
+            return console.log({data});
+        }
+    });
 </script>
 
 <section class='contact' id='contact'>
