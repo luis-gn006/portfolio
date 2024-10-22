@@ -1,54 +1,54 @@
-# Astro Starter Kit: Basics
+# Luis González Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenido al portafolio de Luis González, una colección de proyectos web desarrollados con diversas tecnologías y enfoques. Este portafolio muestra habilidades en diseño y desarrollo web, así como la capacidad de trabajar en equipo y utilizar herramientas modernas.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Estructura del Proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El portafolio está construido utilizando [Astro](https://astro.build/), un generador de sitios estáticos que permite crear sitios rápidos y optimizados. La estructura del proyecto se divide en componentes y secciones que facilitan la navegación y la presentación de la información.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Componentes Principales
 
-## 🚀 Project Structure
+- **Layout**: Proporciona la estructura básica del sitio.
+- **Overlay**: Añade un efecto visual al contenido principal.
+- **Header**: Presenta el título y la bienvenida del portafolio.
+- **AboutMe**: Sección dedicada a información personal y profesional.
+- **Proyects**: Muestra los proyectos realizados, cada uno con detalles sobre su desarrollo.
+- **Skills**: Enumera las habilidades técnicas adquiridas.
+- **MoreInfo**: Ofrece información adicional sobre el autor.
+- **Contact**: Proporciona medios de contacto. (en desarrollo)
+- **Footer**: Contiene información de copyright y enlaces relevantes.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Proyectos Destacados
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+A continuación se presentan algunos de los proyectos destacados en el portafolio:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. **[Alrededor de USA](https://luis-gn006.github.io/web_project_around_react/)**
+   - **Descripción**: Página interactiva similar a una red social.
+   - **Tecnologías**: HTML5, CSS3, JavaScript, React.
+   
+2. **[Carrito de Compras](https://luis-gn006.github.io/product-list-with-cart-main/index.html)**
+   - **Descripción**: Página de compras interactiva.
+   - **Tecnologías**: HTML5, CSS3, JavaScript.
+   
+3. **[Hackathon 2024](https://luis-gn006.github.io/hackathon2024/index.html)**
+   - **Descripción**: Proyecto del hackathon con uso de canvas y manejo de datos en JSON.
+   - **Tecnologías**: HTML5, CSS3, JavaScript.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+4. **[Aprender a Aprender](https://melomario57.github.io/Proyecto-Aprender-2/index.html)**
+   - **Descripción**: Proyecto enfocado en el trabajo en equipo y diseño responsivo.
+   - **Tecnologías**: HTML5, CSS3, JavaScript.
 
-Any static assets, like images, can be placed in the `public/` directory.
+5. **[Biblioteca Triple Peaks](https://luis-gn006.github.io/web_project_library/index.html)**
+   - **Descripción**: Página web intuitiva y atractiva para usuarios.
+   - **Tecnologías**: HTML5, CSS3.
 
-## 🧞 Commands
+6. **[Portafolio Personal](https://luis-gn006.github.io/portfolio/index.html)**
+   - **Descripción**: Este mismo portafolio, desarrollado en Astro.
+   - **Tecnologías**: Astro, CSS3, JavaScript.
 
-All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Conclusión
 
-## 👀 Want to learn more?
+Este portafolio es una representación de mis habilidades y proyectos. Estoy abierto a oportunidades de colaboración y desarrollo. Si deseas contactarme, por favor dirígete a la sección de contacto.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Gracias por visitar mi portafolio. ¡Espero que disfrutes explorando mis proyectos!
