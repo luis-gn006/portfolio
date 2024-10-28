@@ -1,38 +1,68 @@
 <script>
     import {FormValidator, formConfig} from './FormValidator'
-
+    //FormValidator
     const contactForm = document.querySelector('.contact__form');
     const contactFormValidation = new FormValidator(formConfig, contactForm);
     contactFormValidation.enableValidation();
 
+    //Send email
+    const popupEmailSended = document.querySelector<HTMLDivElement>('.contact__popup-sended');
+    const popupEmailError = document.querySelector<HTMLDivElement>('.contact__popup-error');
+    const popupButtons = document.querySelectorAll<HTMLButtonElement>('.contact__popup-button');
+
+    function openPopup(popup: Element | null) {
+        if (popup instanceof HTMLElement) {
+            popup.classList.toggle('contact__popup-open');
+        } else {
+            console.error('El elemento no es un HTMLElement o es null');
+        }
+    }
+    function closePopup(popup: Element | null) {
+        if (popup instanceof HTMLElement) {
+            popup.classList.remove('contact__popup-open');
+        } else {
+            console.error('El elemento no es un HTMLElement o es null');
+        }
+    }
+        
     const contact = document.querySelector<HTMLFormElement>('.contact__form');
     const inputEmail = document.querySelector<HTMLInputElement>('.contact__form-email');
     const inputMessage = document.querySelector<HTMLTextAreaElement>('.contact__form-message');
     
     contact?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    let data = {
-        email: inputEmail?.value,
-        message: inputMessage?.value,
-    };
-    try {
-        const response = await fetch('http://localhost:3000/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        if (!response.ok) {
-            throw new Error('Error al enviar el email');
-        } else {
-            contact.reset();
-            console.log({data});
+        e.preventDefault();
+        let data = {
+            email: inputEmail?.value,
+            message: inputMessage?.value,
+        };
+        try {
+            const response = await fetch('http://localhost:3000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                openPopup(popupEmailError);
+                throw new Error('Error al enviar el email');
+            } else {
+                contact.reset();
+                console.log({data});
+                openPopup(popupEmailSended);
+            }
+        } catch (error) {
+            openPopup(popupEmailError);
+            console.error(error);
         }
-    } catch (error) {
-        console.error(error);
-    }
-});
+    });
+
+    popupButtons.forEach(button => {
+        button.addEventListener('click' , function() {
+            closePopup(popupEmailError);
+            closePopup(popupEmailSended);
+        });
+    });
 </script>
 
 <section class='contact' id='contact'>
@@ -69,6 +99,24 @@
         </fieldset>
     </form>
 </section>
+
+<div class="contact__popup contact__popup-sended">
+    <div class="contact__popup-container">
+        <button class="contact__popup-button">X</button>
+        <p class="contact__popup-message">¡Correo enviado,</p>
+        <p class="contact__popup-message">muchas gracias!</p>
+        <p class="contact__popup-message contact__popup-message-bottom"> &#128512;</p>
+    </div>
+</div>
+
+<div class="contact__popup contact__popup-error">
+    <div class="contact__popup-container">
+        <button class="contact__popup-button">X</button>
+        <p class="contact__popup-message">No se pudo enviar el correo,</p>
+        <p class="contact__popup-message">disculpe.</p>
+        <p class="contact__popup-message contact__popup-message-bottom"> &#128517;</p>
+    </div>
+</div>
 
 <style>
     .contact {
@@ -138,6 +186,56 @@
     }
     ::placeholder {
         font-size: 12px;
+    }
+    .contact__popup {
+        display: flex;
+        background-color: #0000009f;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 30;
+        left: 0;
+        display: none;
+    }
+    .contact__popup-error {
+        display: none;
+    }
+    .contact__popup-container {
+        background-color: #fff;
+        width: 50%;
+        height: max-content;
+        position: relative;
+        top: 25%;
+        margin: 0 auto;
+        z-index: 31;
+        border-radius: 8px;
+        border: solid 3px var(--first-color);
+    }
+    .contact__popup-button {
+        border: none;
+        position: relative;
+        top: -40px;
+        left: 99%;
+        background-color: #00000000;
+        color: #fff;
+        font-size: 34px;
+    }
+    .contact__popup-button:hover {
+        color: var(--first-color);
+        cursor: pointer;
+    }
+    .contact__popup-message {
+        color: #000;
+        margin: auto 5%;
+        text-align: center;
+        font-size: 1.3em;
+    } 
+    .contact__popup-message-bottom {
+        margin: 0 0 4% 0;
+    }
+    .contact__popup-open {
+        display: block;
     }
 
     @media screen and (min-width: 640px) {
