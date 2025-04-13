@@ -42,7 +42,7 @@ A continuación se presentan algunos de los proyectos destacados en el portafoli
    - **Descripción**: Página web intuitiva y atractiva para usuarios.
    - **Tecnologías**: HTML5, CSS3.
 
-6. **[Portafolio Personal](https://luis-gn006.github.io/portfolio/index.html)**
+6. **[Portafolio Personal](https://luis-gn006.github.io/portfolio/)**
    - **Descripción**: Este mismo portafolio, desarrollado en Astro.
    - **Tecnologías**: Astro, CSS3, JavaScript.
 
