@@ -18,5 +18,6 @@
     "express": "^4.21.1",
     "resend": "^4.0.0",
     "typescript": "^5.6.2"
-  }
+  },
+   "homepage": "https://luis-gn006.github.io/portfolio/"
 }
